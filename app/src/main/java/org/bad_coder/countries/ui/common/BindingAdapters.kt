@@ -18,5 +18,16 @@ class BindingAdapters {
                 .fallback(R.drawable.ic_flag_circle)
                 .into(thumbs)
         }
+
+        @JvmStatic
+        @BindingAdapter("loadImage")
+        fun loadImage(thumbs: ImageView, url: String) {
+            Glide.with(thumbs)
+                .load(url)
+                .placeholder(R.drawable.ic_flag_circle)
+                .error(R.drawable.ic_flag_circle)
+                .fallback(R.drawable.ic_flag_circle)
+                .into(thumbs)
+        }
     }
 }
