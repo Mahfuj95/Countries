@@ -20,6 +20,7 @@
             loadImage='@{(viewmodel.countryDetails != null)?viewmodel.countryDetails.flag:""}'
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginTop="36dp"
             android:scaleType="fitXY"
             app:layout_constraintDimensionRatio="16:9"
             app:layout_constraintEnd_toEndOf="parent"

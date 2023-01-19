@@ -6,6 +6,7 @@ import org.bad_coder.countries.R
 import org.bad_coder.countries.databinding.FragmentPresentationBinding
 import org.bad_coder.countries.domain.ViewModelFactory
 import org.bad_coder.countries.ui.common.BaseFragment
+import org.bad_coder.countries.ui.common.getNavController
 
 class PresentationFragment : BaseFragment<
         FragmentPresentationBinding,
@@ -13,7 +14,7 @@ class PresentationFragment : BaseFragment<
 
     override fun initView() {
         binding.onClickListener = OnClickListener {
-            // todo: Handle on click
+            getNavController().navigate(R.id.action_presentationFragment_to_allCountriesFragment)
         }
     }
 

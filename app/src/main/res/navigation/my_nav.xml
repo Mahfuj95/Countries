@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/presentationFragment">
+
+    <fragment
+        android:id="@+id/presentationFragment"
+        android:name="org.bad_coder.countries.ui.screens.presentation_screen.PresentationFragment"
+        android:label="PresentationFragment" >
+        <action
+            android:id="@+id/action_presentationFragment_to_allCountriesFragment"
+            app:destination="@id/allCountriesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allCountriesFragment"
+        android:name="org.bad_coder.countries.ui.screens.all_countries_screen.AllCountriesFragment"
+        android:label="AllCountriesFragment" >
+        <action
+            android:id="@+id/action_allCountriesFragment_to_countryDetailsFragment"
+            app:destination="@id/countryDetailsFragment">
+            <argument
+                android:name="countryName"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/countryDetailsFragment"
+        android:name="org.bad_coder.countries.ui.screens.country_details_screen.CountryDetailsFragment"
+        android:label="CountryDetailsFragment" >
+        <argument
+            android:name="countryName"
+            app:argType="string" />
+    </fragment>
+</navigation>

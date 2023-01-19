@@ -9,6 +9,7 @@ import org.bad_coder.countries.databinding.FragmentAllCountriesBinding
 import org.bad_coder.countries.domain.ViewModelFactory
 import org.bad_coder.countries.domain.model.Country
 import org.bad_coder.countries.ui.common.BaseFragment
+import org.bad_coder.countries.ui.common.getNavController
 import org.bad_coder.countries.ui.common.hide
 import org.bad_coder.countries.ui.common.show
 import org.bad_coder.countries.ui.screens.all_countries_screen.AllCountriesViewModel.UiState
@@ -23,7 +24,9 @@ class AllCountriesFragment : BaseFragment<
         CountryListAdapter().apply {
             setOnClickListener(object : OnItemClickEvent {
                 override fun onClick(view: View, itemModel: Country) {
-                    // todo: Handle item click
+                    val directions = AllCountriesFragmentDirections
+                        .actionAllCountriesFragmentToCountryDetailsFragment(itemModel.name)
+                    getNavController().navigate(directions)
                 }
             })
             adapter = this
